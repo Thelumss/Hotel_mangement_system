@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataModel\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

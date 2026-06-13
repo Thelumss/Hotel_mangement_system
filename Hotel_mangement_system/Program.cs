@@ -1,7 +1,8 @@
 
-using Microsoft.OpenApi;
+using Hotel_mangement_system.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel;
+using Microsoft.OpenApi;
 
 namespace Hotel_mangement_system
 {
@@ -18,6 +19,11 @@ namespace Hotel_mangement_system
             builder.Services.AddEndpointsApiExplorer();
 
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<DataContext>(options =>
+            {
+                options.UseSqlServer("Data Source=localhost;Initial Catalog=Hotel_System;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
+            });
             var app = builder.Build();
 
 
